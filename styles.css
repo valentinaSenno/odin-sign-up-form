@@ -58,6 +58,12 @@ button {
     padding: 10px 20px;
     margin-top: 30px;
     margin-bottom: 15px;
+    cursor: pointer;
+}
+
+button:hover {
+    color: black;
+    box-shadow: 0 0 5pt 2pt #D3D3D3;
 }
 
 .description {
@@ -104,6 +110,20 @@ input {
     border-radius: 3px;
     padding: 3px;
 
+}
+
+input:invalid {
+    border: 2px solid #b01919;
+}
+
+input:focus {
+    border: 2px solid #160bb1;
+    box-shadow: 0 0 5pt 2pt #D3D3D3;
+}
+
+.error-msg {
+    font-size: 0.6em;
+    color: #b01919;
 }
 
 .form-title {

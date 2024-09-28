@@ -41,7 +41,7 @@
                 </div>  
             </div>
             <div class="password-div">
-                <div class="password-div-first">
+                <div class="password-div-first" id="password-div-first">
                 <label for="password">PASSWORD</label>
                 <input type="password" id="password">
                 </div>
@@ -52,9 +52,23 @@
             </div>
         </div>
         <div class="after">
-            <button>Create account</button>
+            <button id="submit-button">Create account</button>
             <p class="instruction">Already have an account? <span class="login">Log in</span></p>
         </div>
     </div>
+    <script>
+        const submitButton = document.getElementById("submit-button");
+        submitButton.addEventListener("click", () => {
+            const password = document.getElementById("password").value;
+            const confirmPassword = document.getElementById("confirm-password").value;
+            if (password !== confirmPassword) {
+                const passwordInput = document.getElementById("password-div-first");
+                const errorMessage = document.createElement("p");
+                errorMessage.innerText = "Passwords do not match";
+                errorMessage.classList.add("error-msg");
+                passwordInput.appendChild(errorMessage);
+            }
+        });
+    </script>
 </body>
 </html>
